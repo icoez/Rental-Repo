@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+:root {
+  --darkGreen: #07342a;
+  --lightGreen: #3d6c5e;
+  --lightFont: #fff;
+  --darkFont: #000;
+}
+a {
+  text-decoration: none;
+  color: var(--lightFont);
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: var(--darkGreen);
+}
+.hamburger {
+  display: block;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 33px;
+  height: 3px;
+  margin-bottom: 7px;
+  position: relative;
+  background-color: var(--lightFont);
+  border-radius: 6px;
+  transform-origin: 0 0;
+  transition: all 0.3s ease;
+}
+.hamburger:hover span:nth-child(2) {
+  transform: translateX(10px);
+  background-color: var(--lightGreen);
+}
+.hamburger.is-active span:nth-child(1) {
+  transform: translate(0px, -2px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translate(-2px, 2px) rotate(-45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+.hamburger.is-active:hover span {
+  background-color: var(--lightGreen);
+}
+.dropdown {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 0.4s ease;
+  top: 0px;
+}
+
+.dropdown.is-active {
+  visibility: visible;
+  top: 70px;
+  left: 0;
+  opacity: 1;
+}
+.dropdown.is-active > div {
+  background-color: var(--darkGreen);
+  width: 100vw;
+  transition: all 0.2s ease;
+  padding: 5px;
+}
+.dropdown.is-active > div > a {
+  margin-left: 30px;
+}
+.dropdown.is-active > div:hover {
+  background-color: #3d6c5e;
+}
+
+.menu {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  .dropdown {
+    display: none;
+  }
+}
+
+.menu a {
+  margin: 0px 20px;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+.menu a:hover {
+  color: var(--lightGreen);
+}
