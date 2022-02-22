@@ -15,12 +15,7 @@
 a {
   text-decoration: none;
   color: var(--lightFont);
-}
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  font-weight: 600;
 }
 
 .nav-container {
@@ -119,4 +114,10 @@ nav {
 }
 .menu a:hover {
   color: var(--lightGreen);
+}
+.bg-img {
+  position: fixed;
+  height: 100vh;
+  z-index: -1;
+  filter: blur(8px);
 }
