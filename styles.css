@@ -17,7 +17,12 @@ a {
   color: var(--lightFont);
   font-weight: 600;
 }
-
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .nav-container {
   display: flex;
   align-items: center;
@@ -95,17 +100,6 @@ a {
 .menu {
   display: none;
 }
-@media (min-width: 768px) {
-  .hamburger {
-    display: none;
-  }
-  .menu {
-    display: block;
-  }
-  .dropdown {
-    display: none;
-  }
-}
 
 .menu a {
   margin: 0px 20px;
@@ -120,4 +114,30 @@ a {
   height: 100vh;
   z-index: -1;
   filter: blur(8px);
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+.content-box {
+  margin-top: 100px;
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+}
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  .dropdown {
+    display: none;
+  }
+  .content-box {
+    width: 800px;
+    background-color: white;
+  }
 }
