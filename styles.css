@@ -114,6 +114,7 @@ nav {
   height: 100vh;
   z-index: -1;
   filter: blur(8px);
+  background-color: #07342a;
 }
 .main-content {
   display: flex;
@@ -139,5 +140,10 @@ nav {
   .content-box {
     width: 800px;
     background-color: white;
+  }
+}
+@media (min-width: 1448px) {
+  .bg-img {
+    height: 100vw;
   }
 }
